@@ -126,10 +126,9 @@ func runServer() {
 		logger.Println(err)
 	}
 	// read command's stdout line by line
-	loc, _ := time.LoadLocation("Asia/Kolkata")
 	in := bufio.NewScanner(stdout)
 			for in.Scan() {
-				t,_:=time.ParseInLocation("01/02/2006 3:04:05 PM",time.Now().Add(330*time.Minute).Format("01/02/2006 3:04:05 PM"),loc)
+				t:=time.Now()
 				ss:=in.Text()
 				go updateDB(t,ss)
 				str:=t.Format(time.RFC850)+"=>"
