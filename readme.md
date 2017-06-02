@@ -14,7 +14,7 @@ Usage:
 
 Now open localhost:PORT in the browser
 
-![Sample](https://raw.githubusercontent.com/yash-srivastava/go-realtime-logger/master/img.png)
+![Sample](img.jpg "Sample") 
 
 Features:
 -
