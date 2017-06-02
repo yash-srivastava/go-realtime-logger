@@ -1,3 +1,7 @@
+https://yash-srivastava.github.io/go-realtime-logger/
+
+Intro:
+-
 This Package Runs an HTTP Server on the specified PORT to display the CONSOLE OUTPUT of the given PROCESS in REAL-TIME.
 
 Requirements:

@@ -4,6 +4,7 @@
       <root url="file://$PROJECT_DIR$/../streetcomm/src/gopkg.in" />
       <root url="file://$PROJECT_DIR$/../streetcomm/src/github.com" />
       <root url="file://$PROJECT_DIR$/../streetcomm/src/golang.org" />
+      <root url="file://$PROJECT_DIR$/../streetcomm/src/realtime_logger" />
       <root url="file://$PROJECT_DIR$/../streetcomm/src/iot" />
       <root url="file://$PROJECT_DIR$/../streetcomm/src/web_logger" />
       <root url="file://$PROJECT_DIR$/../streetcomm/src/iot_client" />
@@ -13,6 +14,7 @@
       <root url="file://$PROJECT_DIR$/../streetcomm/src/gopkg.in" />
       <root url="file://$PROJECT_DIR$/../streetcomm/src/github.com" />
       <root url="file://$PROJECT_DIR$/../streetcomm/src/golang.org" />
+      <root url="file://$PROJECT_DIR$/../streetcomm/src/realtime_logger" />
       <root url="file://$PROJECT_DIR$/../streetcomm/src/iot" />
       <root url="file://$PROJECT_DIR$/../streetcomm/src/web_logger" />
       <root url="file://$PROJECT_DIR$/../streetcomm/src/iot_client" />
