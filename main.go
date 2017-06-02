@@ -13,6 +13,7 @@ import (
 	"encoding/binary"
 	"io"
 	"flag"
+	"path/filepath"
 )
 var (
 	logger					*log.Logger
@@ -127,23 +128,23 @@ func runServer() {
 	}
 	// read command's stdout line by line
 	in := bufio.NewScanner(stdout)
-			for in.Scan() {
-				t:=time.Now()
-				ss:=in.Text()
-				go updateDB(t,ss)
-				str:=t.Format(time.RFC850)+"=>"
-				str+=ss
-				logger.Println("out=",str) // write each line to your log, or anything you need
-				if len(buff)>maxbufflength{
-					buff=buff[1:]
-				}
-				buff=append(buff,str)
-				if isconn{
-					so.Emit("chat message", str)
-					so.BroadcastTo("chat","chat message", str)
-				}
+	for in.Scan() {
+		t:=time.Now()
+		ss:=in.Text()
+		go updateDB(t,ss)
+		str:=t.Format(time.RFC850)+"=>"
+		str+=ss
+		logger.Println("out=",str) // write each line to your log, or anything you need
+		if len(buff)>maxbufflength{
+			buff=buff[1:]
+		}
+		buff=append(buff,str)
+		if isconn{
+			so.Emit("chat message", str)
+			so.BroadcastTo("chat","chat message", str)
+		}
 
-			}
+	}
 	if err := in.Err(); err != nil {
 		logger.Println("error: %s", err)
 	}
@@ -245,11 +246,13 @@ func main() {
 		}
 
 	})
+	dir, _ := filepath.Abs(filepath.Dir(os.Args[0]))
+	logger.Println(dir)
 	server.On("error", func(so socketio.Socket, err error) {
 		log.Println("error:", err)
 	})
 	http.Handle("/socket.io/", server)
-	http.Handle("/", http.FileServer(http.Dir("./src/realtime_logger/asset")))
+	http.Handle("/", http.FileServer(http.Dir(dir+"/asset")))
 	http.HandleFunc("/get", get)
 	log.Println("Serving at :"+port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
