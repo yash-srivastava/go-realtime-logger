@@ -12,6 +12,10 @@ Usage:
 
 ` $ ./realtime_logger [PROCESS] [PROCESS_ARGS] [PORT]`
 
+Now open localhost:PORT in the browser
+
+![Sample](https://raw.githubusercontent.com/yash-srivastava/go-realtime-logger/master/img.png)
+
 Features:
 -
 - Real time console output on a web page
@@ -20,4 +24,4 @@ Features:
 
 More Info:
 - 
-The use of BoltDB to store logs locally makes it thread-safe.
+The use of BoltDB to store logs locally makes it thread-safe. It uses websocket to connect display logs in real-time.
