@@ -1,1 +1,2 @@
-asset/* linguist-vendored
+* linguist-vendored
+*.go linguist-vendored=false
